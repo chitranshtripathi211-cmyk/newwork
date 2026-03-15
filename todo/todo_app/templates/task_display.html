@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> task DIsplay </title>
+</head>
+<body>
+    {% if task %}
+    <ul>
+        {% for i in task %}
+        <li>  {{i.id}} | {{ i.title }} | {{ i.description }} | {{ i.deadline }}  | {{ i.created_at }} | {% if i.completed == False %} Not Completed {% else %} Completed {% endif %} <br> 
+        
+        </ul>
+            <a href="{% url 'taskDelete' i.id %}"> delete</a>
+         </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No tasks available.</p>
+
+    {% endif %}
+</body>
+</html>
