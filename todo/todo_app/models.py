@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here. we write here the structure of our database
+# Create your models here we write here the structure of our database
 class Todo(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
